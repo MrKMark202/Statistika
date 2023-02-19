@@ -7,12 +7,14 @@ df = pd.read_excel(r'E:\GitHub\Statistika\poljoprivreda-pregled-po-zupanijama.xl
 #print(df)
 
 #df = pd.read_excel("poljoprivreda-pregled-po-zupanijama.xlsx", skiprows = [ i for i in range(8, 31, 1) ]  ) 
+
 #print(df)
-                 
-excel_file = 'poljoprivreda-pregled-po-zupanijama.xlsx'
-movies = pd.read_excel(excel_file)
-movies.head(df)
-          
+
+df = pd.read_excel('data.xlsx')
+
+print(df)
+
+ 
 Number_of_agricultural_holdings = []
 Utilised_agricultural_area = []
 Cereals = []
