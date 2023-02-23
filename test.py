@@ -13,7 +13,14 @@ print(df["Trajni nasadi"])
 print(df["Vocnjaci"]) 
 print(df["Goveda"]) 
 
+print(df["Broj poljoprivrednih gospodarstava2"])
+print(df["Koristena poljoprivredna povrsina, ha2"]) 
+print(df["Zitarice2"]) 
+print(df["Secerna repa2"]) 
+print(df["Povrtnjaci2"]) 
+print(df["Trajni nasadi2"]) 
+print(df["Vocnjaci2"]) 
+print(df["Goveda2"]) 
 
 
-Number_of_agricultural_holdings = [print(df["Broj poljoprivrednih gospodarstava"])]
-
+print(df["2013.", "Vocnjaci"])
