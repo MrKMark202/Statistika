@@ -2,8 +2,6 @@ import pandas as pd
 
 df = pd.read_excel('data.xlsx', sheet_name='podaci')
 
-df.values.tolist()
-
 print(df["Broj poljoprivrednih gospodarstava"])
 print(df["Koristena poljoprivredna povrsina, ha"]) 
 print(df["Zitarice"]) 
@@ -21,6 +19,3 @@ print(df["Povrtnjaci2"])
 print(df["Trajni nasadi2"]) 
 print(df["Vocnjaci2"]) 
 print(df["Goveda2"]) 
-
-
-print(df["2013.", "Vocnjaci"])
