@@ -2,21 +2,27 @@ import pandas as pd
 
 podaci = pd.read_excel('data.xlsx')
 
-print(podaci)
-#print(podaci["Broj poljoprivrednih gospodarstava"])
-#print(df["Koristena poljoprivredna povrsina, ha"]) 
-#print(df["Zitarice"]) 
-#print(df["Secerna repa"]) 
-#print(df["Povrtnjaci"]) 
-#print(df["Trajni nasadi"]) 
-#print(df["Vocnjaci"]) 
-#print(df["Goveda"]) 
-#
-#print(df["Broj poljoprivrednih gospodarstava2"])
-#print(df["Koristena poljoprivredna povrsina, ha2"]) 
-#print(df["Zitarice2"]) 
-#print(df["Secerna repa2"]) 
-#print(df["Povrtnjaci2"]) 
-#print(df["Trajni nasadi2"]) 
-#print(df["Vocnjaci2"]) 
-#print(df["Goveda2"]) 
+print(podaci) # Prikaz svih podataka
+print("\n")
+
+podaci_u_listu = podaci.values.tolist()
+
+# Računanje porasta iskorištene poljoprivredne površine
+print("Porast iskorištene poljoprivredne površine")
+print("----------------------------------------------------------------------------------------------")
+PV = podaci_u_listu[1][1] # Vrijednost poljoprivredne površine u RH tokom 2013. godine
+r = 0.5
+n = 3 # Razdoblje 2013.-2016.
+FV = PV * (1 + r) ** n
+
+# Izračunaj povećanje u odnosu na početnu vrijednost
+porast = FV - PV
+
+# Izračunaj vjerojatnost povećanja
+vjerojatnost = porast / PV
+
+# Ispiši rezultate
+print("Buduća vrijednost poljoprivredne površine nakon dvije godine:", FV, "metara kvadratnih")
+print("Povećanje poljoprivredne površine u odnosu na početnu vrijednost:", porast, "metara kvadratnih")
+print("Vjerojatnost povećanja poljoprivredne površine u sljedeće dvije godine:", vjerojatnost)
+print()
