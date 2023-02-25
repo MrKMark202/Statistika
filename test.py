@@ -6,12 +6,14 @@ print(podaci) # Prikaz svih podataka
 print("\n")
 
 podaci_u_listu = podaci.values.tolist()
+print(podaci_u_listu[1][8])
+
 
 # Računanje porasta iskorištene poljoprivredne površine
 print("Porast iskorištene poljoprivredne površine")
 print("----------------------------------------------------------------------------------------------")
 PV = podaci_u_listu[1][1] # Vrijednost poljoprivredne površine u RH tokom 2013. godine
-r = 0.5
+r = float(input("Unesite željeni postotak (u obliku decimalnog broja od 0 do 1): "))
 n = 3 # Razdoblje 2013.-2016.
 FV = PV * (1 + r) ** n
 
@@ -26,3 +28,15 @@ print("Buduća vrijednost poljoprivredne površine nakon dvije godine:", FV, "me
 print("Povećanje poljoprivredne površine u odnosu na početnu vrijednost:", porast, "metara kvadratnih")
 print("Vjerojatnost povećanja poljoprivredne površine u sljedeće dvije godine:", vjerojatnost)
 print()
+
+
+# Predviđanje količine goveda nakon 3 godine
+PVgov = podaci_u_listu[1][16] # Broj goveda u RH 2016. godine
+rođeno = float(input("Unesite prosjek rođenog goveda u decimalnom obliku: "))
+uginulo = float(input("Unesite prosjek uginulog goveda u decimalnom obliku: "))
+
+FVgov1 = PVgov + rođeno - uginulo # Prva godina
+FVgov2 = FVgov1 + rođeno - uginulo # Druga godina
+FVgov3 = FVgov2 + rođeno - uginulo # Treća godina
+
+print("Broj goveda nakon tri godine:", round(FVgov3))
