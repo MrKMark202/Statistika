@@ -16,6 +16,7 @@ if(izbor == 1): # Računanje porasta iskorištene poljoprivredne površine
 
     print("Porast iskorištene poljoprivredne površine")
     print("----------------------------------------------------------------------------------------------")
+
     PV = podaci_u_listu[1][1] # Vrijednost poljoprivredne površine u RH tokom 2013. godine
     r = float(input("Unesite željeni postotak (u obliku decimalnog broja od 0 do 1): "))
     n = 3 # Razdoblje 2013.-2016.
@@ -35,6 +36,9 @@ if(izbor == 1): # Računanje porasta iskorištene poljoprivredne površine
 
 
 elif(izbor == 2): # Predviđanje količine goveda nakon 3 godine
+
+    print("Promjena količine goveda")
+    print("----------------------------------------------------------------------------------------------")
 
     PVgov = podaci_u_listu[1][16] # Broj goveda u RH 2016. godine
     rođeno = float(input("Unesite prosjek rođenog goveda u decimalnom obliku: "))
