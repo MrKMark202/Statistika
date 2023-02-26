@@ -49,3 +49,4 @@ elif(izbor == 2): # Predviđanje količine goveda nakon 3 godine
     FVgov3 = FVgov2 + rođeno - uginulo # Treća godina
 
     print("Broj goveda nakon tri godine:", round(FVgov3))
+    
