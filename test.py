@@ -8,7 +8,7 @@ print("\n")
 podaci_u_listu = podaci.values.tolist()
 #print(podaci_u_listu[][]]) # Debug (provjera selekcije podataka)
 
-print("Izbornik\n\n1 - Promjena poljoprivredne površine\n2 - Promjena količine goveda")
+natrag: print("Izbornik\n\n1 - Promjena poljoprivredne površine\n2 - Promjena količine goveda")
 izbor = int(input("Unesite izbor: "))
 print()
 
@@ -49,4 +49,7 @@ elif(izbor == 2): # Predviđanje količine goveda nakon 3 godine
     FVgov3 = FVgov2 + rođeno - uginulo # Treća godina
 
     print("Broj goveda nakon tri godine:", round(FVgov3))
-    
+
+else:
+    print("Neispravan unos!\n")
+    goto: natrag
