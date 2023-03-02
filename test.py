@@ -61,10 +61,10 @@ elif(izbor == 3): # Predviđanje količine uroda nekog trajnog nasada za sljede�
     
     # Učitavanje postotka očekivanog prinosa za svaku opciju
     
-    postotak = float(input("Koliko posto očekujete prinosa za {} (decimalni broj): ".format(trajni_nasad)))
+    postotak = float(input("Koliko posto očekujete prinosa za {}? Unesite decimalni broj: ".format(trajni_nasad)))
    
     # Učitavanje uroda od prošle godine
-    urod = int(input("Koliko je bilo ukupno uroda od prošle godine (mjera u tonama): "))
+    urod = int(input("Koliko je bilo ukupno uroda od prošle godine? Unesite mjeru u tonama): "))
 
     # Računanje očekivanog prinosa za svaku opciju
     print("Očekivani prinos za {}:".format(trajni_nasad))
@@ -120,9 +120,9 @@ elif(izbor == 4): #Usporedba poljoprivredne površine za 2013. i 2016 godinu
         
     zemlja = int(input("Upišite površinu poljoprivredne površine odabrane županije za 2013. godinu (U km kvadratnima): "))
         
-    prvooc = float(input("Koliko je bilo vaše predviđanje za 2014. godinu (decimalni broj): "))
-    drugooc = float(input("Koliko je bilo vaše predviđanje za 2015. godinu (decimalni broj): "))
-    treceoc = float(input("Koliko je bilo vaše predviđanje za 2016. godinu (decimalni broj): "))    
+    prvooc = float(input("Koliko je bilo vaše predviđanje za 2014. godinu? Unesite decimalni broj: "))
+    drugooc = float(input("Koliko je bilo vaše predviđanje za 2015. godinu? Unesite decimalni broj: "))
+    treceoc = float(input("Koliko je bilo vaše predviđanje za 2016. godinu? Unesite decimalni broj: "))    
     
     ukupnopost = prvooc + drugooc + treceoc
     
