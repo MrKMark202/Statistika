@@ -84,16 +84,11 @@ U sam kôd je implementiran jednostavan izbornik kako bi se prikazalo trenutne f
 <p>
 
 Prvom opcijom učitavamo podatke koji prikazuju iskorištenu poljoprivrednu površinu 2013. i 2016. godine. Nakon učitavanja proizvoljno zadajemo "kamatnu stopu" rasta u decimalnom obliku **float(input())** funkcijom.<br>
-U kôdu se ističu sljedeće varijable:<br>
-
-  
+U kôdu se ističu sljedeće varijable:
 
 - **PV** - prošla vrijednost
-
 - **r** - kamatna stopa rasta (proizvoljna varijabla)
-
 - **n** - broj razdoblja
-
 - **FV** - buduća vrijednost
 
 </p>
@@ -130,3 +125,49 @@ Druga opcija preuzima podatke količine goveda u Republici Hrvatskoj 2016. godin
 Nakon unosa broja rođenog i uginulog goveda predviđanja kroz tri godine računamo formulama *FVgov1 = PVgov + rođeno - uginulo*, *FVgov2 = FVgov1 + rođeno - uginulo* i *FVgov3 = FVgov2 + rođeno - uginulo*  uzastopno te se varijabla **FVgov3** zaokružuje na cijeli broj.<br>Na kraju se na ekranu ispisuje konačna predviđena količina goveda nakon tri godine. 
 
 </p>
+<br>
+
+#### Treći izbor - Predviđanje količine uroda nekog trajnog nasada za sljedeću godinu
+
+<p>
+
+</p>
+
+<img src="https://cdn.discordapp.com/attachments/935643353792532571/1080844323714777198/image.png"><br>
+
+<p>
+
+</p>
+<br>
+
+
+#### Četvrti izbor - Usporedba poljoprivredne površine za 2013. i 2016 godinu
+
+<p>
+
+</p>
+
+<img src="https://cdn.discordapp.com/attachments/935643353792532571/1080844323714777198/image.png"><br>
+
+<p>
+
+</p>
+
+----
+
+#### Sigurnosna petlja
+
+<p>
+
+U izbornik programa je ugrađen uvjet koji osigurava da se nepostojeća funkcija <u>ne može odabrati</u>.<br>
+
+</p>
+
+<p>
+
+<img src="https://cdn.discordapp.com/attachments/935643353792532571/1080844539549450381/image.png"><br>
+
+U trenutku kada je nepostojeća funkcija (selekcijski broj van dosega izbornika) odabrana, program nas upozorava na to te nas preskok imenovan **natrag** vraća na vrh programa, odnosno na početak izbornika gdje ponovno odabiremo željenu funkciju.
+
+</p>
+----
