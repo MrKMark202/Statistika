@@ -169,6 +169,7 @@ U izbornik programa je ugrađen uvjet koji osigurava da se nepostojeća funkcija
 
 U trenutku kada je nepostojeća funkcija (selekcijski broj van dosega izbornika) odabrana, program nas upozorava na to te nas preskok imenovan **natrag** vraća na vrh programa, odnosno na početak izbornika gdje ponovno odabiremo željenu funkciju.
 
-</p>
+</p><br>
 ----
+
 <br>
