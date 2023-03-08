@@ -1,14 +1,18 @@
 import pandas as pd
 
 pod2013 = pd.read_excel('data.xlsx', sheet_name = "2013")
-pod2016 = pd.read_excel('data.xcls', sheet_name = "2016")
+pod2016 = pd.read_excel('data.xlsx', sheet_name = "2016")
 
+print("2013.")
 print(pod2013) # Prikaz svih podataka 2013. godine
-print(pod2016)
+print("\n\n2016.")
+print(pod2016) # Prikaz svih podataka 2016. godine
 print("\n")
 
-podaci_u_listu = podaci.values.tolist()
-#print(podaci_u_listu[][]]) # Debug (provjera selekcije podataka)
+pod2013_lista = pod2013.values.tolist()
+pod2016_lista = pod2016.values.tolist()
+#print(pod2013_lista[][]]) # Debug (provjera selekcije podataka)
+#print(pod2016_lista[][]])
 
 natrag: print("Izbornik\n\n1 - Promjena poljoprivredne površine\n2 - Promjena količine goveda\n3 - Predviđanje uroda za trajni nasad za iduću godinu\n4 - Usporedba poljoprivredne površine za 2013. i 2016 godinu")
 izbor = int(input("Unesite izbor: "))
@@ -19,7 +23,7 @@ if(izbor == 1): # Računanje porasta iskorištene poljoprivredne površine
     print("Porast iskorištene poljoprivredne površine")
     print("----------------------------------------------------------------------------------------------")
 
-    PV = podaci_u_listu[1][1] # Vrijednost poljoprivredne površine u RH tokom 2013. godine
+    PV = pod2013_lista[1][1] # Vrijednost poljoprivredne površine u RH tokom 2013. godine
     r = float(input("Unesite željeni postotak (u obliku decimalnog broja od 0 do 1): "))
     n = 3 # Razdoblje 2013.-2016.
     FV = PV * (1 + r) ** n
@@ -42,7 +46,7 @@ elif(izbor == 2): # Predviđanje količine goveda nakon 3 godine
     print("Promjena količine goveda")
     print("----------------------------------------------------------------------------------------------")
 
-    PVgov = podaci_u_listu[1][16] # Broj goveda u RH 2016. godine
+    PVgov = pod2016_lista[1][8] # Broj goveda u RH 2016. godine
     rođeno = float(input("Unesite prosjek rođenog goveda u decimalnom obliku: "))
     uginulo = float(input("Unesite prosjek uginulog goveda u decimalnom obliku: "))
 
@@ -80,42 +84,14 @@ elif(izbor == 4): #Usporedba poljoprivredne površine za 2013. i 2016 godinu
     
     print("Usporedba poljoprivredne površine za 2013. i 2016 godinu")
     print("----------------------------------------------------------------------------------------------")
+    print(pod2013.Zupanija)
     
-    # Definirajte izbornika sa županijama
-    zupanije = {
-        "1": "Zagrebačka",
-        "2": "Krapinsko-zagorska",
-        "3": "Sisačko-moslavačka",
-        "4": "Karlovačka",
-        "5": "Varaždinska",
-        "6": "Koprivničko-križevačka",
-        "7": "Bjelovarsko-bilogorska",
-        "8": "Primorsko-goranska",
-        "9": "Ličko-senjska",
-        "10": "Virovitičko-podravska",
-        "11": "Požeško-slavonska",
-        "12": "Brodsko-posavska",
-        "13": "Zadarska",
-        "14": "Osječko-baranjska",
-        "15": "Šibensko-kninska",
-        "16": "Vukovarsko-srijemska",
-        "17": "Splitsko-dalmatinska",
-        "18": "Istarska",
-        "19": "Dubrovačko-neretvanska",
-        "20": "Međimurska"
-    }
-
-    # Ispis izbornika sa županijama
-    print("Odaberite županiju:")
-    for k, v in zupanije.items():
-        print(k + ". " + v)
-
     # Unos korisnikovog odabira
     odabir = input("Unesite broj županije: ")
 
     # Provjera ispravnosti korisnikovog odabira
-    if odabir in zupanije.keys():
-        zupanija = zupanije[odabir]
+    if odabir in pod2013['Zupanija'].index:
+        zupanija = pod2013.Zupanija[odabir]
         print("Odabrali ste županiju " + zupanija + ".")
     else:
         print("Krivi unos.")
