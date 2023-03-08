@@ -1,8 +1,10 @@
 import pandas as pd
 
-podaci = pd.read_excel('data.xlsx')
+pod2013 = pd.read_excel('data.xlsx', sheet_name = "2013")
+pod2016 = pd.read_excel('data.xcls', sheet_name = "2016")
 
-print(podaci) # Prikaz svih podataka
+print(pod2013) # Prikaz svih podataka 2013. godine
+print(pod2016)
 print("\n")
 
 podaci_u_listu = podaci.values.tolist()
