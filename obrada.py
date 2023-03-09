@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+import random as rnd
 
 pod2013 = pd.read_excel('data.xlsx', sheet_name = "2013")
 pod2016 = pd.read_excel('data.xlsx', sheet_name = "2016")
@@ -10,7 +12,9 @@ print(pod2016) # Prikaz svih podataka 2016. godine
 print("\n")
 
 pod2013_lista = pod2013.values.tolist()
-pod2016_lista = pod2016.values.tolist()
+pod2013.iloc[:,1:].describe() # Potrebna dorada
+pod2016_lista = pod2016.values.tolist(exclude = pod2016.zupanija)
+pod2016.iloc[:,1:].describe()
 #print(pod2013_lista[][]]) # Debug (provjera selekcije podataka)
 #print(pod2016_lista[][]])
 
@@ -23,10 +27,11 @@ if(izbor == 1): # Računanje porasta iskorištene poljoprivredne površine
     print("Porast iskorištene poljoprivredne površine")
     print("----------------------------------------------------------------------------------------------")
 
+    rnd.seed()
     PV = pod2013_lista[1][1] # Vrijednost poljoprivredne površine u RH tokom 2013. godine
-    r = float(input("Unesite željeni postotak (u obliku decimalnog broja od 0 do 1): "))
-    n = 3 # Razdoblje 2013.-2016.
-    FV = PV * (1 + r) ** n
+    r = float(rnd.uniform(1, 10)) # Nasumično odabrana "kamatna stopa" rasta
+    n = 3 # Razdoblje 2013. - 2016.
+    FV = PV * (r / 100) ** n
 
     # Izračunaj povećanje u odnosu na početnu vrijednost
     porast = FV - PV
@@ -35,9 +40,15 @@ if(izbor == 1): # Računanje porasta iskorištene poljoprivredne površine
     vjerojatnost = porast / PV
 
     # Ispiši rezultate
+    print("Stopa rasta:", r, "%")
     print("Buduća vrijednost poljoprivredne površine nakon dvije godine:", FV, "metara kvadratnih")
-    print("Povećanje poljoprivredne površine u odnosu na početnu vrijednost:", porast, "metara kvadratnih")
-    print("Vjerojatnost povećanja poljoprivredne površine u sljedeće dvije godine:", vjerojatnost)
+    
+    if porast > 0:
+        print("Povećanje poljoprivredne površine u odnosu na početnu vrijednost:", porast, "metara kvadratnih")
+    else:
+        print("Smanjenje poljoprivredne površine u odnosu na početnu vrijednost:", -porast, "metara kvadratnih")
+    
+    print("Vjerojatnost povećanja poljoprivredne površine u sljedeće dvije godine:", vjerojatnost, "%")
     print()
 
 
