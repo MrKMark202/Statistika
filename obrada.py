@@ -5,16 +5,19 @@ import random as rnd
 pod2013 = pd.read_excel('data.xlsx', sheet_name = "2013")
 pod2016 = pd.read_excel('data.xlsx', sheet_name = "2016")
 
+# Ispis podataka
 print("2013.")
 print(pod2013) # Prikaz svih podataka 2013. godine
+print("\n-----------------------------------------------------------------\nDetalji\n", pod2013.iloc[ : , 1 : ].describe()) # Detaljna analiza 2013.
 print("\n\n2016.")
 print(pod2016) # Prikaz svih podataka 2016. godine
+print("\n-----------------------------------------------------------------\nDetalji\n", pod2016.iloc[ : , 1 : ].describe()) # Detaljna analiza 2016.
 print("\n")
 
 pod2013_lista = pod2013.values.tolist()
-pod2013.iloc[:,1:].describe() # Potrebna dorada
-pod2016_lista = pod2016.values.tolist(exclude = pod2016.zupanija)
-pod2016.iloc[:,1:].describe()
+pod2016_lista = pod2016.values.tolist()
+det2013 = pod2013.iloc[ : , 1:].describe() # Varijable detaljnih podataka za kasnije korištenje
+det2016 = pod2016.iloc[ : , 1:].describe()
 #print(pod2013_lista[][]]) # Debug (provjera selekcije podataka)
 #print(pod2016_lista[][]])
 
