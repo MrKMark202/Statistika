@@ -23,6 +23,8 @@ print("\n-----------------------------------------------------------------\nDeta
 print("\n")
 
 pod2013_lista = pod2013.values.tolist()
+pod2014_lista = pod2014.values.tolist()
+pod2015_lista = pod2015.values.tolist()
 pod2016_lista = pod2016.values.tolist()
 det2013 = pod2013.iloc[ : , 1:].describe() # Varijable detaljnih podataka za kasnije korištenje
 det2016 = pod2016.iloc[ : , 1:].describe()
@@ -41,6 +43,9 @@ if(izbor == 1): # Računanje porasta iskorištene poljoprivredne površine
     rnd.seed()
     PV = pod2013_lista[1][1] # Vrijednost poljoprivredne površine u RH tokom 2013. godine
     r = float(rnd.uniform(1, 10)) # Nasumično odabrana "kamatna stopa" rasta
+    
+    ff = "{:.2f}".format(r)
+     
     n = 3 # Razdoblje 2013. - 2016.
     FV = PV * (r / 100) ** n
 
@@ -51,7 +56,7 @@ if(izbor == 1): # Računanje porasta iskorištene poljoprivredne površine
     vjerojatnost = porast / PV
 
     # Ispiši rezultate
-    print("Stopa rasta:", r, "%")
+    print("Stopa rasta:", ff, "%")
     print("Buduća vrijednost poljoprivredne površine nakon dvije godine:", FV, "metara kvadratnih")
     
     if porast > 0:
@@ -69,13 +74,19 @@ elif(izbor == 2): # Predviđanje količine goveda nakon 3 godine
     print("----------------------------------------------------------------------------------------------")
 
     PVgov = pod2016_lista[1][8] # Broj goveda u RH 2016. godine
-    rođeno = float(input("Unesite prosjek rođenog goveda u decimalnom obliku: "))
-    uginulo = float(input("Unesite prosjek uginulog goveda u decimalnom obliku: "))
+    rođeno = float(rnd.uniform(1, 10))
+    uginulo = float(rnd.uniform(1, 10))
+    
+    # Zaokruživanje decimalnog broja na 2 znamenke
+    ro = "{:.2f}".format(rođeno)
+    ug = "{:.2f}".format(uginulo)
 
     FVgov1 = PVgov + rođeno - uginulo # Prva godina
     FVgov2 = FVgov1 + rođeno - uginulo # Druga godina
     FVgov3 = FVgov2 + rođeno - uginulo # Treća godina
 
+    print("Stopa rodnosti goveda: ", ro, "%")
+    print("Stopa smrtnisti goveda: ", ug, "%")
     print("Broj goveda nakon tri godine:", round(FVgov3))
 
 
@@ -89,12 +100,14 @@ elif(izbor == 3): # Predviđanje količine uroda nekog trajnog nasada za sljede�
     
     # Učitavanje postotka očekivanog prinosa za svaku opciju
     
-    postotak = float(input("Koliko posto očekujete prinosa za {}? Unesite decimalni broj: ".format(trajni_nasad)))
+    postotak = float(rnd.uniform(1, 10))
+    format_float = "{:.2f}".format(postotak)
    
     # Učitavanje uroda od prošle godine
     urod = int(input("Koliko je bilo ukupno uroda od prošle godine? Unesite mjeru u tonama): "))
 
     # Računanje očekivanog prinosa za svaku opciju
+    print("Postotak uroda predviđen za iduću godinu: ",format_float, "%")
     print("Očekivani prinos za {}:".format(trajni_nasad))
     prinos = round(urod * (postotak / 100), 2)
     print("- {} : {} tona".format(trajni_nasad, prinos))
@@ -106,29 +119,32 @@ elif(izbor == 4): #Usporedba poljoprivredne površine za 2013. i 2016 godinu
     
     print("Usporedba poljoprivredne površine za 2013. i 2016 godinu")
     print("----------------------------------------------------------------------------------------------")
-    print(pod2013.Zupanija)
     
-    # Unos korisnikovog odabira
-    odabir = input("Unesite broj županije: ")
-
-    # Provjera ispravnosti korisnikovog odabira
-    if odabir in pod2013['Zupanija'].index:
-        zupanija = pod2013.Zupanija[odabir]
-        print("Odabrali ste županiju " + zupanija + ".")
-    else:
-        print("Krivi unos.")
-        
+   
     zemlja = int(input("Upišite površinu poljoprivredne površine odabrane županije za 2013. godinu (U km kvadratnima): "))
         
-    prvooc = float(input("Koliko je bilo vaše predviđanje za 2014. godinu? Unesite decimalni broj: "))
-    drugooc = float(input("Koliko je bilo vaše predviđanje za 2015. godinu? Unesite decimalni broj: "))
-    treceoc = float(input("Koliko je bilo vaše predviđanje za 2016. godinu? Unesite decimalni broj: "))    
+    prvooc = float(rnd.uniform(-10, 10))
+    drugooc = float(rnd.uniform(-10, 10))
+    treceoc = float(rnd.uniform(-10, 10))
+    
+    p = "{:.2f}".format(prvooc)
+    d = "{:.2f}".format(drugooc)
+    t = "{:.2f}".format(treceoc)
+    
+    ukupnost = float
+    rezul = float
     
     ukupnopost = prvooc + drugooc + treceoc
+    uk = "{:.2f}".format(ukupnopost)
     
     rezul = zemlja * ukupnopost
+    r = "{:.2f}".format(rezul)
     
-    print("Vaše očekivanje za 2016. godinu je: {}".format(rezul))
+    print("Postotak za prvu godinu", p, "%")
+    print("Postotak za drugu godinu", d, "%")
+    print("Postotak za treću godinu", t, "%")
+    
+    print("Vaše očekivanje za 2016. godinu je: ", r)
     
 else:
     print("Neispravan unos!\n")
