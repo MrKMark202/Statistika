@@ -3,12 +3,20 @@ import numpy as np
 import random as rnd
 
 pod2013 = pd.read_excel('data.xlsx', sheet_name = "2013")
+pod2014 = pd.read_excel('data.xlsx', sheet_name = "2014")
+pod2015 = pd.read_excel('data.xlsx', sheet_name = "2015")
 pod2016 = pd.read_excel('data.xlsx', sheet_name = "2016")
 
 # Ispis podataka
 print("2013.")
 print(pod2013) # Prikaz svih podataka 2013. godine
 print("\n-----------------------------------------------------------------\nDetalji\n", pod2013.iloc[ : , 1 : ].describe()) # Detaljna analiza 2013.
+print("2014.")
+print(pod2013) # Prikaz svih podataka 2013. godine
+print("\n-----------------------------------------------------------------\nDetalji\n", pod2014.iloc[ : , 1 : ].describe()) # Detaljna analiza 2014.
+print("2015.")
+print(pod2013) # Prikaz svih podataka 2013. godine
+print("\n-----------------------------------------------------------------\nDetalji\n", pod2015.iloc[ : , 1 : ].describe()) # Detaljna analiza 2015.
 print("\n\n2016.")
 print(pod2016) # Prikaz svih podataka 2016. godine
 print("\n-----------------------------------------------------------------\nDetalji\n", pod2016.iloc[ : , 1 : ].describe()) # Detaljna analiza 2016.
