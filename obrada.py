@@ -149,8 +149,9 @@ elif(izbor == 4): #Usporedba poljoprivredne površine za 2013. i 2016 godinu
     
     print("Vaše očekivanje za 2016. godinu je: ", r)
 
-elif(izbor == 5):
+elif(izbor == 5): # Grafovi
     brPoljGosp = pd.concat(pod2013["Broj poljoprivrednih gospodarstava"], pod2014["Broj poljoprivrednih gospodarstava"], pod2015["Broj poljoprivrednih gospodarstava"], pod2016["Broj poljoprivrednih gospodarstava"], axis = 1)
+    print(brPoljGosp)
     
 else:
     print("Neispravan unos!\n")
