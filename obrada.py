@@ -1,35 +1,42 @@
 import pandas as pd
 import numpy as np
 import random as rnd
+import matplotlib.pyplot as plt
 
 pod2013 = pd.read_excel('data.xlsx', sheet_name = "2013")
 pod2014 = pd.read_excel('data.xlsx', sheet_name = "2014")
 pod2015 = pd.read_excel('data.xlsx', sheet_name = "2015")
 pod2016 = pd.read_excel('data.xlsx', sheet_name = "2016")
+det2013 = pod2013.iloc[ : , 1 : ].describe() # Varijable detaljnih podataka za kasnije korištenje
+det2014 = pod2014.iloc[ : , 1 : ].describe()
+det2015 = pod2015.iloc[ : , 1 : ].describe()
+det2016 = pod2016.iloc[ : , 1 : ].describe()
 
 # Ispis podataka
 print("2013.")
 print(pod2013) # Prikaz svih podataka 2013. godine
-print("\n-----------------------------------------------------------------\nDetalji\n", pod2013.iloc[ : , 1 : ].describe()) # Detaljna analiza 2013.
-print("2014.")
+print("\n---------------------------------------------------------------------\nDetalji\n", det2013) # Detaljna analiza 2013.
+print("\n\n2014.")
 print(pod2013) # Prikaz svih podataka 2013. godine
-print("\n-----------------------------------------------------------------\nDetalji\n", pod2014.iloc[ : , 1 : ].describe()) # Detaljna analiza 2014.
-print("2015.")
+print("\n---------------------------------------------------------------------\nDetalji\n", det2014) # Detaljna analiza 2014.
+print("\n\n2015.")
 print(pod2013) # Prikaz svih podataka 2013. godine
-print("\n-----------------------------------------------------------------\nDetalji\n", pod2015.iloc[ : , 1 : ].describe()) # Detaljna analiza 2015.
+print("\n---------------------------------------------------------------------\nDetalji\n", det2015) # Detaljna analiza 2015.
 print("\n\n2016.")
 print(pod2016) # Prikaz svih podataka 2016. godine
-print("\n-----------------------------------------------------------------\nDetalji\n", pod2016.iloc[ : , 1 : ].describe()) # Detaljna analiza 2016.
+print("\n---------------------------------------------------------------------\nDetalji\n", det2016) # Detaljna analiza 2016.
 print("\n")
 
 pod2013_lista = pod2013.values.tolist()
 pod2014_lista = pod2014.values.tolist()
 pod2015_lista = pod2015.values.tolist()
 pod2016_lista = pod2016.values.tolist()
-det2013 = pod2013.iloc[ : , 1:].describe() # Varijable detaljnih podataka za kasnije korištenje
-det2016 = pod2016.iloc[ : , 1:].describe()
-#print(pod2013_lista[][]]) # Debug (provjera selekcije podataka)
-#print(pod2016_lista[][]])
+
+# Debug (provjera selekcije podataka)
+#print(pod2013_lista[][])
+#print(pod2014_lista[][])
+#print(pod2015_lista[][])
+#print(pod2016_lista[][])
 
 natrag: print("Izbornik\n\n1 - Promjena poljoprivredne površine\n2 - Promjena količine goveda\n3 - Predviđanje uroda za trajni nasad za iduću godinu\n4 - Usporedba poljoprivredne površine za 2013. i 2016 godinu")
 izbor = int(input("Unesite izbor: "))
@@ -42,12 +49,10 @@ if(izbor == 1): # Računanje porasta iskorištene poljoprivredne površine
 
     rnd.seed()
     PV = pod2013_lista[1][1] # Vrijednost poljoprivredne površine u RH tokom 2013. godine
-    r = float(rnd.uniform(1, 10)) # Nasumično odabrana "kamatna stopa" rasta
-    
-    ff = "{:.2f}".format(r)
+    r = "{:.2f}".format(float(rnd.uniform(1, 10))) # Nasumično odabrana "kamatna stopa" rasta
      
     n = 3 # Razdoblje 2013. - 2016.
-    FV = PV * (r / 100) ** n
+    FV = PV * (float(r) / 100) ** n
 
     # Izračunaj povećanje u odnosu na početnu vrijednost
     porast = FV - PV
@@ -56,7 +61,7 @@ if(izbor == 1): # Računanje porasta iskorištene poljoprivredne površine
     vjerojatnost = porast / PV
 
     # Ispiši rezultate
-    print("Stopa rasta:", ff, "%")
+    print("Stopa rasta:", r, "%")
     print("Buduća vrijednost poljoprivredne površine nakon dvije godine:", FV, "metara kvadratnih")
     
     if porast > 0:
@@ -111,8 +116,6 @@ elif(izbor == 3): # Predviđanje količine uroda nekog trajnog nasada za sljede�
     print("Očekivani prinos za {}:".format(trajni_nasad))
     prinos = round(urod * (postotak / 100), 2)
     print("- {} : {} tona".format(trajni_nasad, prinos))
-
-
 
 
 elif(izbor == 4): #Usporedba poljoprivredne površine za 2013. i 2016 godinu
