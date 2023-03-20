@@ -86,15 +86,11 @@ U kôdu se ističu sljedeće varijable:
 - **n** - broj razdoblja
 - **FV** - buduća vrijednost
 
-</p>
-
-<img src="https://cdn.discordapp.com/attachments/935643353792532571/1080532927995187310/image.png">
+</p>![img](https://cdn.discordapp.com/attachments/935643353792532571/1087469401768460379/image.png)
 
 <p>
 
-Buduća predviđena vrijednost se računa formulom: *FV = PV x (1 + r) ^2* nakon čega izračunavamo porast oduzimanjem prošle vrijednosti od buduće vrijednosti.<br>
-
-Na kraju, izračunavamo vjerojatnost povećanja iskorištene poljoprivredne površine dijeljenjem porasta sa prošlom vrijednosti te ispisujemo rezultate na ekran.
+Buduća predviđena vrijednost se računa formulom: *FV = PV x (1 + r) ^2* nakon čega izračunavamo porast oduzimanjem prošle vrijednosti od buduće vrijednosti. Na kraju, izračunavamo vjerojatnost povećanja iskorištene poljoprivredne površine dijeljenjem porasta sa prošlom vrijednosti te ispisujemo rezultate na ekran.
 
 </p>
 <br>
@@ -112,12 +108,11 @@ Druga opcija preuzima podatke količine goveda u Republici Hrvatskoj 2016. godin
 - **FVgov3** - predviđen broj goveda nakon tri godine
 
 </p>
-<img src="https://cdn.discordapp.com/attachments/935643353792532571/1080788723047862332/image.png">
+<img src="https://cdn.discordapp.com/attachments/935643353792532571/1087468702351491172/image.png">
 <br>
 
-<p>
 
-Nakon unosa broja rođenog i uginulog goveda predviđanja kroz tri godine računamo formulama *FVgov1 = PVgov + rođeno - uginulo*, *FVgov2 = FVgov1 + rođeno - uginulo* i *FVgov3 = FVgov2 + rođeno - uginulo*  uzastopno te se varijabla **FVgov3** zaokružuje na cijeli broj.<br>Na kraju se na ekranu ispisuje konačna predviđena količina goveda nakon tri godine. 
+Program nam uzima podatke goveda iz naše excel tablice i onda bira slučajni broj kao njegovo predviđanje pada ili porasta goveda za 3 godine
 
 </p>
 <br>
@@ -136,14 +131,13 @@ U ovoj opciji su deklarirane sljedeće varijable:
 
 </p>
 
-<img src="https://cdn.discordapp.com/attachments/935643353792532571/1080844323714777198/image.png"><br>
+<img src="https://cdn.discordapp.com/attachments/935643353792532571/1087468192332513280/image.png"><br>
 
-Upisuje se naziv trajnog nasada za koji želimo napraviti predviđanje, zatim se upisuje postotak koji želimo, u glavnom upisujemo onoliko koliko mislim da će se povećati ili smanjiti urod za sljedeću godinu, te na kraju upisujmo koliko je bilo uroda prošle godine (izražen u tonama).
+Upisuje se naziv trajnog nasada za koji želimo napraviti predviđanje, zatim program ispisuje slučajni postotak, u glavnom upisuje se onoliko za koliko program misli  da će se povećati ili smanjiti urod za sljedeću godinu, te na kraju upisujemo koliko je bilo uroda prošle godine (izražen u tonama).
 
 Imamo formulu **Urod * (postotak / 100) ** preko koje računamo naše očekivanje
 
 <p>
-
 </p>
 <br>
 
@@ -166,10 +160,11 @@ U ovoj opciji smo deklarirali slijedeće varijable:
 
 </p>
 
-<img src="https://media.discordapp.net/attachments/935643353792532571/1080844481789698158/image.png?width=611&height=676"><br>
+<img src="https://cdn.discordapp.com/attachments/935643353792532571/1087467587157368923/image.png"><br>
 
 <p>
-Imamo listu sa svim županijama, što praktički želimo jer nam treba izbornik za županije. Izaberemo županiju za koju želimo napraviti predviđanje, zatim upisujemo poljoprivrednu površinu zemlje od 2013. godine, pa upisujemo naše predviđanje za 2014, 2015 i 2016. godinu. Program na kraju zbraja predviđanje od sve tri godine u ukupni postotak i onda se pomnoži sa površinom zemlje koju smo upisali.
+Izaberemo veličinu poljoprivredne površine za koju želimo napraviti predviđanje. Predviđanje se piše za 2013. godine, pa upisujemo naše predviđanje za 2014, 2015 i 2016. godinu. Program na kraju zbraja predviđanje od sve tri godine u ukupni postotak i onda se pomnoži sa površinom zemlje koju smo upisali.
+
 
 </p>
 
