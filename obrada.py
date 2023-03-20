@@ -4,6 +4,7 @@ import random as rnd
 import matplotlib.pyplot as plt
 import csv
 
+
 pod2013 = pd.read_excel('data.xlsx', sheet_name = "2013")
 pod2014 = pd.read_excel('data.xlsx', sheet_name = "2014")
 pod2015 = pd.read_excel('data.xlsx', sheet_name = "2015")
@@ -162,21 +163,33 @@ else:
     print("Neispravan unos!\n")
     goto: natrag
 
-    
-x = []
-y = []
 
-pod2013 = pd.read_excel('data.xlsx', sheet_name = "2013")
-plots = csv.reader(pod2013, delimiter = ',')
-      
-for row in plots:
-    x.append(row[1])
-    y.append(int(row[1]))
-  
-plt.bar(x, y, color = 'g', width = 0.72, label = "Age")
-plt.hist(pod2013["Broj poljoprivrednih gospodarstava"], alpha = 0.5, label = "2013")
-plt.xlabel('Zupanije')
-plt.ylabel('Povrsine')
-plt.title('Povrsine zupanija')
-plt.legend(loc = "upper right")
-plt.show()
+from PIL import Image
+
+ntrag: print("Izbornik\n\n1 - Graf za polj. površinu za 2013. godinu\n2 - Graf za polj. površinu za 2014. godinu\n3 - Graf za polj. površinu za 2015. godinu\n4 - Graf za polj. površinu za 2016. godinu\n5 - Graf koji uspoređuje polj. površine kroz sve 4 godine")
+izbr = int(input("Unesite izbor: "))
+print()
+    
+if(izbr==1):
+    img = Image.open("2013 graf.png")
+    img.show()
+
+elif(izbr==2):
+    img = Image.open("2014 graf.png")
+    img.show()
+    
+elif(izbr==3):
+    img = Image.open("2015 graf.png")
+    img.show()
+    
+elif(izbr==4):
+    img = Image.open("2016 graf.png")
+    img.show()
+    
+elif(izbr==5):
+    img = Image.open("Linijski graf.png")
+    img.show()
+
+else:
+    print("Neispravan unos!\n")
+    goto: ntrag
