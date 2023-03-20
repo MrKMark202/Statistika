@@ -161,22 +161,3 @@ elif(izbor == 5): # Grafovi
 else:
     print("Neispravan unos!\n")
     goto: natrag
-
-    
-x = []
-y = []
-
-pod2013 = pd.read_excel('data.xlsx', sheet_name = "2013")
-plots = csv.reader(pod2013, delimiter = ',')
-      
-for row in plots:
-    x.append(row[1])
-    y.append(int(row[1]))
-  
-plt.bar(x, y, color = 'g', width = 0.72, label = "Age")
-plt.hist(pod2013["Broj poljoprivrednih gospodarstava"], alpha = 0.5, label = "2013")
-plt.xlabel('Zupanije')
-plt.ylabel('Povrsine')
-plt.title('Povrsine zupanija')
-plt.legend(loc = "upper right")
-plt.show()
