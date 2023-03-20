@@ -11,7 +11,7 @@
 <img  src="https://cdn.discordapp.com/attachments/931310318687236126/1064306501977645076/Unipu-logo-lat.png"  style="height:200px"  />
 
 
-  
+
 
 Dokumentacija uz projektni zadatak
 
@@ -194,3 +194,11 @@ U trenutku kada je nepostojeća funkcija (selekcijski broj van dosega izbornika)
 ---
 
 <br>
+
+
+
+# Grafovi
+
+<img src="https://cdn.discordapp.com/attachments/935643353792532571/1087464641732563024/image.png">
+
+Zbog poteškoća sa grafovima u python-u, nismo ih mogli napraviti, ali smo zato došli do ovoga rješenja. Na slici je prikazan kod preko kojega korisnik bira koji graf želi vidjeti, a slike smo stavili u isti direktorij kako bi se mogle učitati. U ponuđenome imamo 5 grafova koji pokazuju poljoprivredne površine za svaku županiju za 2013., 2014., 2015. i 2016 godinu posebno i graf koji pokazuje kroz tok tih godina kako se površina zemlje kretala.
