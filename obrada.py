@@ -238,3 +238,40 @@ plt.plot(x, b1 * x + b0, color='red')
 plt.xlabel('X')
 plt.ylabel('Y')
 plt.show()
+
+
+
+
+#Računanje uroda trajnih nasada za 2017. godinu preko jednadžbe regresijskog pravca
+
+
+suma_x = 10
+suma_y = 289.10
+suma_xy = 724.36
+suma_x_na_kvadrat = 30
+
+bbb = (4 * suma_xy - suma_x * suma_y) / (4 * suma_x_na_kvadrat - (suma_x*suma_x))
+aaa = (suma_y - (-bbb) * suma_x) / 4
+
+banana = aaa - bbb * 5
+
+x = np.array([2013, 2014, 2015, 2016, 2017])
+
+vari1 = 72.94
+vari2 = 72.25
+vari3 = 71.94
+vari4 = 71.97
+vari5 = banana
+
+     
+y = np.array([vari1, vari2, vari3, vari4, vari5])
+
+# izračunaj koeficijente regresije
+b1, b0 = np.polyfit(x, y, 1)
+
+# nacrtaj graf
+plt.scatter(x, y)
+plt.plot(x, b1 * x + b0, color='red')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.show()
