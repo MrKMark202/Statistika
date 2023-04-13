@@ -162,6 +162,7 @@ elif(izbor == 5): # Grafovi
 else:
     print("Neispravan unos!\n")
     goto: natrag
+    
 
 
 from PIL import Image
@@ -193,3 +194,47 @@ elif(izbr==5):
 else:
     print("Neispravan unos!\n")
     goto: ntrag
+
+
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+var1 = []
+var2 = []
+var3 = []
+var4 = []
+var5 = []
+var6 = []
+var7 = []
+var8 = []
+var9 = []
+var10 = []
+
+# generiraj slučajne podatke
+x = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+for l in range(10):
+     var1 = int(rnd.uniform(25, 50))
+     var2 = int(rnd.uniform(25, 50))
+     var3 = int(rnd.uniform(25, 50))
+     var4 = int(rnd.uniform(25, 50))
+     var5 = int(rnd.uniform(25, 50))
+     var6 = int(rnd.uniform(25, 50))
+     var7 = int(rnd.uniform(25, 50))
+     var8 = int(rnd.uniform(25, 50))
+     var9 = int(rnd.uniform(25, 50))
+     var10 = int(rnd.uniform(25, 50))
+     
+y = np.array([var1, var2, var3, var4, var5, var6, var7, var8, var9, var10])
+
+# izračunaj koeficijente regresije
+b1, b0 = np.polyfit(x, y, 1)
+
+# nacrtaj graf
+plt.scatter(x, y)
+plt.plot(x, b1 * x + b0, color='red')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.show()
